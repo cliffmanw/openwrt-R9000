@@ -9,8 +9,7 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 
-echo "CONFIG_TARGET_alpine=y" >> .config
-echo "CONFIG_TARGET_BOARD=alpine" >> .config
+git clone --depth 1 --branch master --single-branch --no-tags --recurse-submodules https://github.com/fantastic-packages/packages package/fantastic-packages
 
 
 # Tested working Modifys of Settings like default IP etc. cliffman moded

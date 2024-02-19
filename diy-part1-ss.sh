@@ -12,7 +12,6 @@
 
 # for R9000 drivers and system
 echo "src-git alpinefancontrol https://github.com/hurrian/openwrt-alpine-fan-control.git" >> feeds.conf.default
-git clone --depth 1 --branch master --single-branch --no-tags --recurse-submodules https://github.com/fantastic-packages/packages package/fantastic-packages
 
 # >>> add the 10G SFP Port (eth0) to the LAN; enable the LED of the 10G SFP Port <<<
 echo "uci set network.@device[0].ports='eth0'; uci add_list network.@device[0].ports='eth1.1'; uci commit network;" > target/linux/alpine/base-files/etc/uci-defaults/99-sfp-port
