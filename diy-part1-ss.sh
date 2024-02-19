@@ -28,7 +28,6 @@ echo exit 0 > target/linux/alpine/base-files/etc/uci-defaults/xx_customizations
 
 # R9000 requires ends.
 
-
 # clear up first, moved to yml
 # rm -rf ./feeds
 # Uncomment a feed source
