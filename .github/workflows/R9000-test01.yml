@@ -83,7 +83,7 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: OpenWrt_config${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: openwrt/confile
+        path: confile
 
     - name: Load custom feeds
       run: |
