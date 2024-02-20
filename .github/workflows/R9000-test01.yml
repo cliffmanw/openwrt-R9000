@@ -79,8 +79,8 @@ jobs:
         echo "$GITHUB_WORKSPACE--/--$DIY_P1_SH"
         echo "$GITHUB_WORKSPACE--/--$DIY_P2_SH"
         ls $GITHUB_WORKSPACE -l
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+#        cd openwrt
+#        $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: SSH connection to Actions
       uses: cliffmanw/ssh2actions@main
@@ -102,8 +102,8 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+#        cd openwrt
+#        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: SSH connection to Actions
       uses: cliffmanw/ssh2actions@main
