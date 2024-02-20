@@ -103,12 +103,6 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-    - name: Upload config-bak
-      uses: actions/upload-artifact@main
-      with:
-        name: OpenWrt_cfg${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: confile
-
     - name: Download package
       id: package
       run: |
