@@ -86,6 +86,7 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         ls -l
+        echo "GITHUB_WORKSPACE: "; echo $GITHUB_WORKSPACE
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
