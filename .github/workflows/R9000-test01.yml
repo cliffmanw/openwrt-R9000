@@ -76,8 +76,9 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        echo "$GITHUB_WORKSPACE/$DIY_P1_SH"
-        echo "$GITHUB_WORKSPACE/$DIY_P2_SH"
+        echo "$GITHUB_WORKSPACE--/--$DIY_P1_SH"
+        echo "$GITHUB_WORKSPACE--/--$DIY_P2_SH"
+        ls $GITHUB_WORKSPACE -l
 #        cd openwrt
 #        $GITHUB_WORKSPACE/$DIY_P1_SH
 
@@ -125,7 +126,8 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j2 || make -j2 V=s
+#       make -j$(nproc) || make -j2 || make -j2 V=s
+        make V=s -j$(($(nproc)+1))
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
