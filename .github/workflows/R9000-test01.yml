@@ -79,8 +79,8 @@ jobs:
         echo "$GITHUB_WORKSPACE--/--$DIY_P1_SH"
         echo "$GITHUB_WORKSPACE--/--$DIY_P2_SH"
         ls $GITHUB_WORKSPACE -l
-#        cd openwrt
-#        $GITHUB_WORKSPACE/$DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: SSH connection to Actions
       uses: cliffmanw/ssh2actions@main
@@ -126,7 +126,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make V=sc -j$(($(nproc)+1))
+        make -j$(($(nproc)+1))
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
