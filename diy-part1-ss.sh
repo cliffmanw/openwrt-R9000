@@ -29,7 +29,8 @@ echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git" >>fe
 echo "src-git pwpkgs https://github.com/xiaorouji/openwrt-passwall-packages.git" >>feeds.conf.default
 # more feeds, compiled ipk only, cliffman
 echo "src-git adguardhome https://github.com/rufengsuixing/luci-app-adguardhome.git" >>feeds.conf.default
-echo "src-git wrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon.git" >>feeds.conf.default
+echo "src-git wrtbwmonluci https://github.com/brvphoenix/luci-app-wrtbwmon.git" >>feeds.conf.default
+echo "src-git wrtbwmon https://github.com/pyrovski/wrtbwmon.git" >>feeds.conf.default
 # For passwall
 # echo "src-git passwall https://github.com/Boos4721/OpenWrt-Packages.git" >>feeds.conf.default
 # For openclash
