@@ -116,7 +116,6 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        find package/qca/ -name "Makefile" -exec sed -i 's/https:\/\/source.codeaurora.org\/quic/https:\/\/git.codelinaro.org\/clo/g' {} \;
         echo -e "$(nproc) thread compile"
         make V=sc -j$(($(nproc)+1))
         echo "status=success" >> $GITHUB_OUTPUT
