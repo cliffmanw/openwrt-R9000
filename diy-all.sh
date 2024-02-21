@@ -55,5 +55,6 @@ printf "printf \"config port\\\n\\\toption ifname '60GHz-radio0'\\\n\\\toption n
 echo exit 0 > target/linux/alpine/base-files/etc/uci-defaults/xx_customizations
 
 # partly success after run this. stopped at toolchain compile before. cliffman
-make menuconfig
+# mv R9000.config openwrt/.config
+# make menuconfig
 # R9000 requires ends.
